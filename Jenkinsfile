@@ -1,11 +1,10 @@
 pipeline {
-      agent {
-           docker { image 'nginx:latest' }
-      }
+      agent any 
+      
       stages {
          stage ('Test') {
                steps {
-                  echo "Success!"
+                  sh "sudo docker pull nginx:latest"
                }
          }
       }
